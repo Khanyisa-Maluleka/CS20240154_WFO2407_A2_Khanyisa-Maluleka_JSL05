@@ -11,6 +11,9 @@ const songs = [
     { title: "Come and Get Your Love", artist: "Redbone", genre: "Rock" },
     { title: "I'm Not in Love", artist: "10cc", genre: "Pop" },
     { title: "Fooled Around and Fell in Love", artist: "Elvin Bishop", genre: "Rock" },
+    { title: "High On Life", artist: "Martin Garrix feat. Bonn", genre: "House" },
+    { title: "I Forgive You", artist: "Sia", genre: "Pop" },
+    { title: "No Sleep", artist: "Martin Garrix feat. Bonn", genre: "House" }
     // Feel free to add even more songs
 ];
 
@@ -19,6 +22,9 @@ const songs = [
 const guardians = {
     "Star-Lord": "Rock",
     "Gamora": "Pop",
+    "Drax": "House",
+    "Rocket": "R&B",
+    "Groot": "House"
     // Add preferences for Drax, Rocket, and Groot
 };
 
