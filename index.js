@@ -39,7 +39,10 @@ generatePlaylist(guardians, songs);
 
 for (let guardian in guardians) {
     const preferredGenre = guardians[guardian];
+    const filteredSongs = songs.filter(song => song.genre === preferredGenre);
 
+    const playlistDiv = document.createElement('div');
+        playlistDiv.className = 'playlist';
 }
 
 
