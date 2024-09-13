@@ -47,6 +47,10 @@ for (let guardian in guardians) {
     const guardianHeading = document.createElement('h3');
     guardianHeading.textContent = `${guardian}'s Playlist`;
     playlistDiv.appendChild(guardianHeading)
+
+    filteredSongs.forEach(song => {
+        
+    })
 }
 
 
