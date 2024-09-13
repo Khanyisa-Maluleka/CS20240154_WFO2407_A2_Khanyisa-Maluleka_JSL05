@@ -38,7 +38,8 @@ function generatePlaylist(guardians, songs) {
 generatePlaylist(guardians, songs);
 
 for (let guardian in guardians) {
-    
+    const preferredGenre = guardians[guardian];
+
 }
 
 
