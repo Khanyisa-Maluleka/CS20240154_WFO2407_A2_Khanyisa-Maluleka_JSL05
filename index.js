@@ -52,7 +52,9 @@ function generatePlaylist(guardians, songs) {
             songTitle.className = 'song-title';
             songTitle.textContent = song.title;
             songDiv.appendChild(songTitle);
-    
+
+            songDiv.appendChild(document.createTextNode(` by ${song.artist}`));
+
             playlistDiv.appendChild(songDiv);
         })
         galaxyPlaylist.appendChild(playlistDiv);
