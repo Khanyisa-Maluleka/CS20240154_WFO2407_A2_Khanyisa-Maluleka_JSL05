@@ -49,7 +49,8 @@ for (let guardian in guardians) {
     playlistDiv.appendChild(guardianHeading)
 
     filteredSongs.forEach(song => {
-        
+        const songDiv = document.createElement('div');
+        songDiv.className = 'song';
     })
 }
 
