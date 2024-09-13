@@ -32,33 +32,36 @@ const guardians = {
 function generatePlaylist(guardians, songs) {
     // Use the map() function to create playlists for each Guardian
     const galaxyPlaylist = document.getElementById('playlists');
+
+    for (let guardian in guardians) {
+        const preferredGenre = guardians[guardian];
+        const filteredSongs = songs.filter(song => song.genre === preferredGenre);
+    
+        const playlistDiv = document.createElement('div');
+        playlistDiv.className = 'playlist';
+    
+        const guardianHeading = document.createElement('h3');
+        guardianHeading.textContent = `${guardian}'s Playlist`;
+        playlistDiv.appendChild(guardianHeading)
+    
+        filteredSongs.forEach(song => {
+            const songDiv = document.createElement('div');
+            songDiv.className = 'song';
+    
+            const songTitle = document.createElement('span');
+            songTitle.className = 'song-title';
+            songTitle.textContent = song.title;
+            songDiv.appendChild(songTitle);
+    
+            playlistDiv.appendChild(songDiv);
+        })
+        galaxyPlaylist.appendChild(playlistDiv);
+    }
 }
 
 // Call generatePlaylist and display the playlists for each Guardian
 generatePlaylist(guardians, songs);
 
-for (let guardian in guardians) {
-    const preferredGenre = guardians[guardian];
-    const filteredSongs = songs.filter(song => song.genre === preferredGenre);
 
-    const playlistDiv = document.createElement('div');
-    playlistDiv.className = 'playlist';
-
-    const guardianHeading = document.createElement('h3');
-    guardianHeading.textContent = `${guardian}'s Playlist`;
-    playlistDiv.appendChild(guardianHeading)
-
-    filteredSongs.forEach(song => {
-        const songDiv = document.createElement('div');
-        songDiv.className = 'song';
-
-        const songTitle = document.createElement('span');
-        songTitle.className = 'song-title';
-        songTitle.textContent = song.title;
-        songDiv.appendChild(songTitle);
-
-        playlistDiv.appendChild(songDiv);
-    })
-}
 
 
