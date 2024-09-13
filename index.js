@@ -37,4 +37,8 @@ function generatePlaylist(guardians, songs) {
 // Call generatePlaylist and display the playlists for each Guardian
 generatePlaylist(guardians, songs);
 
+for (let guardian in guardians) {
+    
+}
+
 
