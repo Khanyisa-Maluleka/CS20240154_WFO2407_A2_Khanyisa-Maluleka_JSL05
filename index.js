@@ -43,6 +43,10 @@ for (let guardian in guardians) {
 
     const playlistDiv = document.createElement('div');
         playlistDiv.className = 'playlist';
+
+    const guardianHeading = document.createElement('h3');
+    guardianHeading.textContent = `${guardian}'s Playlist`;
+    playlistDiv.appendChild(guardianHeading)
 }
 
 
