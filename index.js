@@ -42,7 +42,7 @@ for (let guardian in guardians) {
     const filteredSongs = songs.filter(song => song.genre === preferredGenre);
 
     const playlistDiv = document.createElement('div');
-        playlistDiv.className = 'playlist';
+    playlistDiv.className = 'playlist';
 
     const guardianHeading = document.createElement('h3');
     guardianHeading.textContent = `${guardian}'s Playlist`;
@@ -51,6 +51,11 @@ for (let guardian in guardians) {
     filteredSongs.forEach(song => {
         const songDiv = document.createElement('div');
         songDiv.className = 'song';
+
+        const songTitle = document.createElement('span');
+        songTitle.className = 'song-title';
+        songTitle.textContent = song.title;
+        songDiv.appendChild(songTitle);
     })
 }
 
