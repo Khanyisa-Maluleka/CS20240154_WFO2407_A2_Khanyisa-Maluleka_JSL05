@@ -36,28 +36,19 @@ function generatePlaylist(guardians, songs) {
     for (let guardian in guardians) {
         const preferredGenre = guardians[guardian];
         const filteredSongs = songs.filter(song => song.genre === preferredGenre);
-    
-        const playlistDiv = document.createElement('div');
-        playlistDiv.className = 'playlist';
-    
-        const guardianHeading = document.createElement('h3');
-        guardianHeading.textContent = `${guardian}'s Playlist`;
-        playlistDiv.appendChild(guardianHeading)
-    
-        filteredSongs.forEach(song => {
-            const songDiv = document.createElement('div');
-            songDiv.className = 'song';
-    
-            const songTitle = document.createElement('span');
-            songTitle.className = 'song-title';
-            songTitle.textContent = song.title;
-            songDiv.appendChild(songTitle);
-
-            songDiv.appendChild(document.createTextNode(` by ${song.artist}`));
-
-            playlistDiv.appendChild(songDiv);
-        })
-        galaxyPlaylist.appendChild(playlistDiv);
+        
+        const playlistHTML = `
+            <div class="playlist">
+                <h3>${guardian}'s Playlist</h3>
+                ${filteredSongs.map(song => `
+                    <div class="song">
+                        <span class="song-title">${song.title}</span> by ${song.artist}
+                    </div>
+                `).join('')}
+            </div>
+        `;
+        
+        galaxyPlaylist.innerHTML += playlistHTML;
     }
 }
 
