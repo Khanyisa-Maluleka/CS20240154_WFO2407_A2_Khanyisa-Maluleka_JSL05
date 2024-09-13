@@ -56,6 +56,8 @@ for (let guardian in guardians) {
         songTitle.className = 'song-title';
         songTitle.textContent = song.title;
         songDiv.appendChild(songTitle);
+
+        playlistDiv.appendChild(songDiv);
     })
 }
 
